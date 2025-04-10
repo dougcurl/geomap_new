@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>KGS Geologic Map Information Service</title>
+
+    <!-- ArcGIS Maps SDK CSS -->
+    <link rel="stylesheet" href="https://js.arcgis.com/4.31/@arcgis/core/assets/esri/themes/light/main.css">
+
+    <!-- Calcite Components -->
+    <link rel="stylesheet" href="https://js.arcgis.com/calcite-components/1.11.0/calcite.css" />
+    <script type="module" src="https://js.arcgis.com/calcite-components/1.11.0/calcite.esm.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c5ab3a9895.js" crossorigin="anonymous"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/geomap.css">
+
+    <!-- Main Module Script -->
+    <script type="module" src="js/main.js"></script>
+</head>
+<body class="calcite-mode-light">
+    <!-- App Shell -->
+    <calcite-shell content-behind>
+      <div slot="header" class="header-container">
+        <calcite-navigation class="top-nav calcite-theme-dark">
+              <!-- Menu Toggle -->
+              <calcite-action
+                slot="content-start"
+                id="menuToggle"
+                icon="hamburger"
+                text="Menu"
+                scale="m"
+                text-enabled>
+            </calcite-action>
+      
+              <!-- Title -->
+              <calcite-navigation-logo 
+                  slot="logo" 
+                  heading="Kentucky Geologic Map Service"
+                  thumbnail="img/UK-KGSLogos/UK-KGS-lockup/KGS-white.png"
+                  href="https://kgs.uky.edu"
+                  target="_blank">
+              </calcite-navigation-logo>
+              
+              <!-- Feedback Link -->
+              <calcite-action
+                  slot="content-end"
+                  icon="speech-bubble"
+                  text="Feedback"
+                  scale="m"
+                  text-enabled
+                  href="https://kgs.uky.edu/kgsweb/KGSfeedback.asp"
+                  target="_blank">
+              </calcite-action>
+          </calcite-navigation>
+      </div>
+
+        <!-- Main Content Area -->
+        <div id="viewDiv"></div>
+
+        <!-- Panels Container -->
+        <calcite-shell-panel slot="panel-end" position="end" hidden>
+            <!-- About Panel -->
+            <calcite-panel 
+                id="about-panel"
+                heading="About"
+                hidden>
+                <div id="aboutPanelContent"></div>
+            </calcite-panel>
+
+            <!-- Tools Panel -->
+            <calcite-panel 
+                id="tools-panel"
+                heading="Tools"
+                hidden>
+                <div id="toolsPanelContent">
+                    <calcite-block heading="Measurement" collapsible>
+                        <calcite-button
+                            id="distance-button"
+                            icon-start="measure-line"
+                            appearance="outline">
+                            Distance
+                        </calcite-button>
+                        <calcite-button
+                            id="area-button"
+                            icon-start="measure-area"
+                            appearance="outline">
+                            Area
+                        </calcite-button>
+                    </calcite-block>
+
+                    <calcite-block heading="Coordinate ID/Conversion" collapsible>
+                        <calcite-button
+                            id="coords-button"
+                            icon-start="pin"
+                            appearance="outline">
+                            Coordinates
+                        </calcite-button>
+                    </calcite-block>
+
+                    <calcite-block heading="Area Identify" collapsible>
+                        <calcite-button
+                            id="boxid-button"
+                            icon-start="box-select"
+                            appearance="outline">
+                            Draw Box
+                        </calcite-button>
+                    </calcite-block>
+
+                    <calcite-notice>
+                        <div slot="message">
+                            When tools are active, the widget appears on the map below. 
+                            Use Clear Tool to deactivate and close the widget.
+                        </div>
+                    </calcite-notice>
+
+                    <calcite-button
+                        id="clear-button"
+                        icon-start="trash"
+                        kind="danger"
+                        appearance="outline"
+                        width="full">
+                        Clear Tool
+                    </calcite-button>
+                </div>
+            </calcite-panel>
+
+            <!-- Other panels would follow similar pattern -->
+            <!-- Layers Panel -->
+            <calcite-panel 
+                id="layers-panel"
+                heading="Layers"
+                hidden>
+                <div id="layersPanelContent"></div>
+            </calcite-panel>
+
+            <!-- Legend Panel -->
+            <calcite-panel 
+                id="legend-panel"
+                heading="Legend"
+                hidden>
+                <div id="legendPanelContent"></div>
+            </calcite-panel>
+        </calcite-shell-panel>
+
+        <!-- Loading Indicator -->
+        <calcite-loader id="loader" type="indeterminate" scale="l" hidden></calcite-loader>
+    </calcite-shell>
+</body>
+</html>

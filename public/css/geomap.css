@@ -1,0 +1,98 @@
+/* Base styles */
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* Shell styles */
+calcite-shell {
+    --calcite-shell-content-background: transparent;
+}
+
+.header-container {
+  background-color:#19468d !important
+}
+
+calcite-navigation {
+  background-color: #19468d !important;
+}
+
+/* Override all header text/icon colors */
+calcite-navigation,
+calcite-navigation calcite-action,
+calcite-navigation calcite-navigation-logo,
+calcite-action[slot="content-start"],
+calcite-action[slot="content-end"] {
+    --calcite-ui-foreground-1: #19468d !important;
+    --calcite-ui-foreground-2: #19468d!important;
+    --calcite-ui-text-1: #ffffff !important;
+    --calcite-ui-text-2: #ffffff !important;
+    --calcite-ui-text-3: #ffffff !important;
+    --calcite-ui-icon-color: #ffffff !important;
+    --calcite-ui-brand: #19468d !important;
+    --calcite-ui-brand-hover: #19468d !important;
+    color: #ffffff !important;
+}
+
+calcite-navigation {
+  height: 65px;
+}
+
+/* Menu Position controls */
+.top-nav [slot="content-start"] {
+  position: absolute;
+  top:10px;
+  left: 5px;
+}
+
+.top-nav [slot="logo"] {
+  margin-left: 120px;
+  min-width: 300px;
+}
+
+/* Map container */
+#viewDiv {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* Shell panel styles */
+calcite-shell-panel[position="end"] {
+    --calcite-shell-panel-min-width: 280px;
+    --calcite-shell-panel-max-width: 380px;
+}
+
+/* Tools panel styles */
+#tools-panel calcite-block {
+    margin-bottom: 1rem;
+}
+
+#tools-panel calcite-button {
+    margin: 0.25rem;
+}
+
+/* Scale display */
+#scaleDisplay {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 1;
+}
+
+/* Loading indicator */
+#loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
