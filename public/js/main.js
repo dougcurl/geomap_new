@@ -1,8 +1,5 @@
 import Map from 'https://js.arcgis.com/5.0/@arcgis/core/Map.js';
 import MapView from 'https://js.arcgis.com/5.0/@arcgis/core/views/MapView.js';
-import ScaleBar from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/ScaleBar.js';
-import Home from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Home.js';
-import Locate from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Locate.js';
 import esriConfig from 'https://js.arcgis.com/5.0/@arcgis/core/config.js';
 
 import { config } from './modules/config.js';

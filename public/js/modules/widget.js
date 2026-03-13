@@ -4,7 +4,6 @@ import Home from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Home.js';
 import ScaleBar from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/ScaleBar.js';
 import Locate from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Locate.js';
 import BasemapGallery from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/BasemapGallery.js';
-import Search from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Search.js';
 import Print from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Print.js';
 import CoordinateConversion from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/CoordinateConversion.js';
 import Format from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/CoordinateConversion/support/Format.js';
@@ -19,17 +18,15 @@ export async function initializeWidgets(view) {
     const locateWidget = new Locate({ view });
     const scaleBar = new ScaleBar({ view, unit: "dual" });
 
-    // These need to actually be added to the map UI
+    // Actually add them to the map UI
+    view.ui.move("zoom", "top-left");
     view.ui.add(homeWidget, "top-left");
     view.ui.add(locateWidget, "top-left");
     view.ui.add(scaleBar, { position: "bottom-left" });
 
-    // Remove default zoom widget position and re-add top-left
-    view.ui.move("zoom", "top-left");
-
     const printWidget = new Print({
         view,
-        printServiceUrl: config.services.print,  // use config instead of hardcoded URL
+        printServiceUrl: config.services.print,
         container: "printPanelDiv",
         templateOptions: {
             author: "Kentucky Geological Survey",

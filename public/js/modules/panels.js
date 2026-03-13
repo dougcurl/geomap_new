@@ -50,7 +50,8 @@ function showPanel(panelId) {
 
 async function loadInitialContent() {
     try {
-        const aboutResponse = await fetch('about.asp?format=textonly');
+        //need to make an about page to load content into, but this is the idea for loading content into panels on app load
+        const aboutResponse = await fetch('about.html');
         const aboutContent = await aboutResponse.text();
         const aboutPanel = document.getElementById('aboutPanelContent');
         if (aboutPanel) aboutPanel.innerHTML = aboutContent;

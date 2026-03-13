@@ -51,8 +51,8 @@ async function executeIdentify(event, view) {
         const allFeatures = results.flat();
 
         if (allFeatures.length > 0) {
-            view.openPopup({
-                features: allFeatures,
+            view.popup.open({
+                features: allFeatures,   // or hitFeatures
                 location: event.mapPoint,
                 title: "Identify Results"
             });
