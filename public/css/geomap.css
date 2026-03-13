@@ -13,28 +13,30 @@ calcite-shell {
 }
 
 .header-container {
-  background-color:#19468d !important
+    background-color: #19468d;
 }
 
 calcite-navigation {
-  background-color: #19468d !important;
+    background-color: #19468d;
+    --calcite-color-foreground-1: #19468d;
+    --calcite-color-foreground-2: #19468d;
+    --calcite-color-foreground-3: #19468d;
+    --calcite-color-text-1: #ffffff;
+    --calcite-color-text-2: #ffffff;
+    --calcite-color-text-3: #ffffff;
+    --calcite-color-brand: #19468d;
+    --calcite-color-brand-hover: #2a5aab;
+    --calcite-navigation-background: #19468d;
+    color: #ffffff;
 }
 
-/* Override all header text/icon colors */
-calcite-navigation,
 calcite-navigation calcite-action,
-calcite-navigation calcite-navigation-logo,
-calcite-action[slot="content-start"],
-calcite-action[slot="content-end"] {
-    --calcite-ui-foreground-1: #19468d !important;
-    --calcite-ui-foreground-2: #19468d!important;
-    --calcite-ui-text-1: #ffffff !important;
-    --calcite-ui-text-2: #ffffff !important;
-    --calcite-ui-text-3: #ffffff !important;
-    --calcite-ui-icon-color: #ffffff !important;
-    --calcite-ui-brand: #19468d !important;
-    --calcite-ui-brand-hover: #19468d !important;
-    color: #ffffff !important;
+calcite-navigation calcite-navigation-logo {
+    --calcite-color-foreground-1: #19468d;
+    --calcite-color-text-1: #ffffff;
+    --calcite-color-text-2: #ffffff;
+    --calcite-color-brand: #19468d;
+    color: #ffffff;
 }
 
 calcite-navigation {

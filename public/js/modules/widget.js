@@ -1,17 +1,17 @@
 // src/js/modules/widgets.js
-import Home from 'https://js.arcgis.com/4.32/@arcgis/core/widgets/Home.js';
-import ScaleBar from 'https://js.arcgis.com/4.32/@arcgis/core/widgets/ScaleBar.js';
-import Locate from 'https://js.arcgis.com/4.32/@arcgis/core/widgets/Locate.js';
-import BasemapGallery from 'https://js.arcgis.com/4.32/@arcgis/core/widgets/BasemapGallery.js';
-import Search from 'https://js.arcgis.com/4.32/@arcgis/core/widgets/Search.js';
-import Print from 'https://js.arcgis.com/4.32/@arcgis/core/widgets/Print.js';
-import CoordinateConversion from 'https://js.arcgis.com/4.32/@arcgis/core/widgets/CoordinateConversion.js';
-import Format from 'https://js.arcgis.com/4.32/@arcgis/core/widgets/CoordinateConversion/support/Format.js';
-import Conversion from 'https://js.arcgis.com/4.32/@arcgis/core/widgets/CoordinateConversion/support/Conversion.js';
-import Measurement from 'https://js.arcgis.com/4.32/@arcgis/core/widgets/Measurement.js';
-import LayerList from 'https://js.arcgis.com/4.32/@arcgis/core/widgets/LayerList.js';
-import Legend from 'https://js.arcgis.com/4.32/@arcgis/core/widgets/Legend.js';
-import SpatialReference from 'https://js.arcgis.com/4.32/@arcgis/core/geometry/SpatialReference.js';
+import Home from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Home.js';
+import ScaleBar from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/ScaleBar.js';
+import Locate from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Locate.js';
+import BasemapGallery from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/BasemapGallery.js';
+import Search from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Search.js';
+import Print from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Print.js';
+import CoordinateConversion from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/CoordinateConversion.js';
+import Format from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/CoordinateConversion/support/Format.js';
+import Conversion from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/CoordinateConversion/support/Conversion.js';
+import Measurement from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Measurement.js';
+import LayerList from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/LayerList.js';
+import Legend from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Legend.js';
+import SpatialReference from 'https://js.arcgis.com/5.0/@arcgis/core/geometry/SpatialReference.js';
 
 export async function initializeWidgets(view) {
   // Initialize home widget

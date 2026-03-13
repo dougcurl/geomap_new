@@ -1,6 +1,6 @@
-import LayerList from 'https://js.arcgis.com/4.32/@arcgis/core/widgets/LayerList.js';
-import { watch } from 'https://js.arcgis.com/4.32/@arcgis/core/reactiveUtils.js';
-import Slider from 'https://js.arcgis.com/4.32/@arcgis/core/widgets/Slider.js';
+import LayerList from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/LayerList.js';
+import { watch } from 'https://js.arcgis.com/5.0/@arcgis/core/reactiveUtils.js';
+import Slider from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Slider.js';
 
 export class LayerUI {
   constructor(view, layerManager) {

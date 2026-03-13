@@ -1,5 +1,5 @@
 // src/js/modules/layerEvents.js
-import { watch } from 'https://js.arcgis.com/4.32/@arcgis/core/reactiveUtils.js';
+import { watch } from 'https://js.arcgis.com/5.0/@arcgis/core/reactiveUtils.js';
 import { identifyFeatures } from './identify.js';
 
 // Set up layer event handlers

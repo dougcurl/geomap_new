@@ -24,7 +24,7 @@ export const layerConfig = {
       {
         type: 'imagery',
         id: 'rast_kyImagery',
-        title: 'KY NAIP Aerial 2022 (2 ft leaf on - entire state)',
+        title: 'KY NAIP Aerial 2022 (2 ft leaf on)',
         url: 'https://kyraster.ky.gov/arcgis/rest/services/ImageServices/Ky_NAIP_2022_2FT/ImageServer',
         visible: false,
         opacity: 1.0
@@ -32,8 +32,8 @@ export const layerConfig = {
       {
         type: 'imagery',
         id: 'rast_kyImagery_KPED',
-        title: 'KYAPED Aerial 2019 (2 ft - leaf off - east half of KY only)',
-        url: 'https://kyraster.ky.gov/arcgis/rest/services/ImageServices/Ky_KYAPED_2019_6IN_WGS84WM/ImageServer',
+        title: 'KYAPED Aerial - leaf off (3 inch - 2020-2022)',
+        url: 'https://kyraster.ky.gov/arcgis/rest/services/ImageServices/Ky_KYAPED_Phase3_3IN_WGS84WM/ImageServer',
         visible: false,
         opacity: 1.0
       },

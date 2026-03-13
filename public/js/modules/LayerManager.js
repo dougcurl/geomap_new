@@ -1,9 +1,9 @@
 // src/js/modules/LayerManager.js
-import MapImageLayer from 'https://js.arcgis.com/4.32/@arcgis/core/layers/MapImageLayer.js';
-import TileLayer from 'https://js.arcgis.com/4.32/@arcgis/core//layers/TileLayer.js';
-import FeatureLayer from 'https://js.arcgis.com/4.32/@arcgis/core/layers/FeatureLayer.js';
-import ImageryLayer from 'https://js.arcgis.com/4.32/@arcgis/core/layers/ImageryLayer.js';
-import GroupLayer from 'https://js.arcgis.com/4.32/@arcgis/core/layers/GroupLayer.js';
+import MapImageLayer from 'https://js.arcgis.com/5.0/@arcgis/core/layers/MapImageLayer.js';
+import TileLayer from 'https://js.arcgis.com/5.0/@arcgis/core//layers/TileLayer.js';
+import FeatureLayer from 'https://js.arcgis.com/5.0/@arcgis/core/layers/FeatureLayer.js';
+import ImageryLayer from 'https://js.arcgis.com/5.0/@arcgis/core/layers/ImageryLayer.js';
+import GroupLayer from 'https://js.arcgis.com/5.0/@arcgis/core/layers/GroupLayer.js';
 import { layerConfig, layerOrder, layerScales } from './LayerConfig.js';
 
 /**
@@ -147,12 +147,12 @@ export class LayerManager {
 
     try {
       await layer.load();
-      this.layers.set(config.id, layer);
-      return layer;
     } catch (error) {
-      console.error(`Error loading layer ${config.id}:`, error);
-      throw error;
+      console.warn(`Layer ${config.id} failed to load, adding anyway:`, error);
+      // Don't throw — let the app continue
     }
+    this.layers.set(config.id, layer);
+    return layer;
   }
 
   /**

@@ -5,12 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
     <title>KGS Geologic Map Information Service</title>
 
-    <!-- ArcGIS Maps SDK CSS -->
-    <link rel="stylesheet" href="https://js.arcgis.com/4.31/@arcgis/core/assets/esri/themes/light/main.css">
-
-    <!-- Calcite Components -->
-    <link rel="stylesheet" href="https://js.arcgis.com/calcite-components/1.11.0/calcite.css" />
-    <script type="module" src="https://js.arcgis.com/calcite-components/1.11.0/calcite.esm.js"></script>
+    <!-- ArcGIS SDK 5.0 for JavaScript -->
+    <script type="module" src="https://js.arcgis.com/5.0/"></script>
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/c5ab3a9895.js" crossorigin="anonymous"></script>
@@ -25,7 +21,7 @@
     <!-- App Shell -->
     <calcite-shell content-behind>
       <div slot="header" class="header-container">
-        <calcite-navigation class="top-nav calcite-theme-dark">
+        <calcite-navigation class="top-nav">
               <!-- Menu Toggle -->
               <calcite-action
                 slot="content-start"
@@ -40,8 +36,8 @@
               <calcite-navigation-logo 
                   slot="logo" 
                   heading="Kentucky Geologic Map Service"
-                  thumbnail="img/UK-KGSLogos/UK-KGS-lockup/KGS-white.png"
-                  href="https://kgs.uky.edu"
+                  thumbnail="https://kgs.uky.edu/kygeode/img/UK-KGSLogos/KGS-new/kgs-logo-white.png"
+                  href="https://kygs.uky.edu"
                   target="_blank">
               </calcite-navigation-logo>
               
