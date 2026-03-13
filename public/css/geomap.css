@@ -5,11 +5,32 @@ body {
     margin: 0;
     height: 100%;
     width: 100%;
+    overflow: hidden; /* ADD THIS - prevents the page scroll */
 }
 
-/* Shell styles */
 calcite-shell {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
     --calcite-shell-content-background: transparent;
+}
+
+calcite-shell-panel calcite-navigation {
+    display: none;
+}
+
+/* Map container */
+#viewDiv {
+    padding: 0;
+    margin: 0;
+    position: absolute;  /* ADD THIS */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .header-container {
@@ -53,14 +74,6 @@ calcite-navigation {
 .top-nav [slot="logo"] {
   margin-left: 120px;
   min-width: 300px;
-}
-
-/* Map container */
-#viewDiv {
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
 }
 
 /* Shell panel styles */
