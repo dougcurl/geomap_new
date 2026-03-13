@@ -16,9 +16,10 @@ async function executeIdentify(event, view) {
             ?.map(r => r.graphic);
 
         if (hitFeatures?.length > 0) {
-            view.openPopup({
-                features: hitFeatures,
-                location: event.mapPoint
+            view.popup.open({
+                features: allFeatures,
+                location: event.mapPoint,
+                title: "Identify Results"
             });
             return;
         }
@@ -56,7 +57,7 @@ async function executeIdentify(event, view) {
                 title: "Identify Results"
             });
         } else {
-            view.closePopup();
+            view.popup.close();
         }
 
     } catch (error) {

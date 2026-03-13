@@ -114,3 +114,10 @@ calcite-shell-panel[position="end"] {
         display: flex;
     }
 }
+
+/* Hide hamburger on desktop since panel is always visible */
+@media (min-width: 769px) {
+    #menuToggle {
+        display: none;
+    }
+}

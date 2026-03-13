@@ -11,6 +11,7 @@ import { setupTools } from './modules/tools.js';
 import { setupPanels } from './modules/panels.js';
 import { setupLegend } from './modules/legend.js';
 import { initializeIdentify } from './modules/identify.js';
+import { initializeWidgets } from './modules/widget.js';
 
 // Application state
 class AppState {
@@ -92,41 +93,6 @@ async function initializeMapComponents() {
 
     } catch (error) {
         console.error('Error initializing map components:', error);
-        throw error;
-    }
-}
-
-/**
- * Initialize core widgets
- */
-async function initializeWidgets(view) {
-    try {
-        // Home widget
-        const home = new Home({ view });
-        view.ui.add(home, "top-left");
-
-        // Locate widget
-        const locate = new Locate({ view });
-        view.ui.add(locate, "top-left");
-
-        // Scale bar
-        const scaleBar = new ScaleBar({
-            view,
-            unit: "dual"
-        });
-        view.ui.add(scaleBar, {
-            position: "bottom-left"
-        });
-
-        // Store widgets in app state
-        app.widgets = {
-            home,
-            locate,
-            scaleBar
-        };
-
-    } catch (error) {
-        console.error('Error initializing widgets:', error);
         throw error;
     }
 }

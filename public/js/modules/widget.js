@@ -1,4 +1,5 @@
 // src/js/modules/widgets.js
+import { config } from './config.js';
 import Home from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Home.js';
 import ScaleBar from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/ScaleBar.js';
 import Locate from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Locate.js';
@@ -14,48 +15,35 @@ import Legend from 'https://js.arcgis.com/5.0/@arcgis/core/widgets/Legend.js';
 import SpatialReference from 'https://js.arcgis.com/5.0/@arcgis/core/geometry/SpatialReference.js';
 
 export async function initializeWidgets(view) {
-  // Initialize home widget
-  const homeWidget = new Home({
-    view: view
-  });
+    const homeWidget = new Home({ view });
+    const locateWidget = new Locate({ view });
+    const scaleBar = new ScaleBar({ view, unit: "dual" });
 
-  // Initialize locate widget  
-  const locateWidget = new Locate({
-    view: view
-  });
+    // These need to actually be added to the map UI
+    view.ui.add(homeWidget, "top-left");
+    view.ui.add(locateWidget, "top-left");
+    view.ui.add(scaleBar, { position: "bottom-left" });
 
-  // Initialize basemap gallery
-  const basemapWidget = new BasemapGallery({
-    view: view,
-    container: "basemapPanelDiv",
-    portal: false
-  });
+    // Remove default zoom widget position and re-add top-left
+    view.ui.move("zoom", "top-left");
 
-  // Initialize scale bar
-  const scaleBar = new ScaleBar({
-    view: view,
-    unit: "dual"
-  });
+    const printWidget = new Print({
+        view,
+        printServiceUrl: config.services.print,  // use config instead of hardcoded URL
+        container: "printPanelDiv",
+        templateOptions: {
+            author: "Kentucky Geological Survey",
+            copyright: "Kentucky Geological Survey",
+            title: "Kentucky Geologic Map Information Service"
+        }
+    });
 
-  // Initialize print widget
-  const printWidget = new Print({
-    view: view,
-    printServiceUrl: "https://kgs.uky.edu/arcgis/rest/services/KGSProcesses/ExportWebMap/GPServer/Export%20Web%20Map",
-    container: "printPanelDiv",
-    templateOptions: {
-      author: "author: Kentucky Geological Survey",
-      copyright: "copyright Kentucky Geological Survey",
-      title: "Kentucky Geologic Map Information Service"
-    }
-  });
+    const basemapWidget = new BasemapGallery({
+        view,
+        container: "basemapPanelDiv"
+    });
 
-  return {
-    home: homeWidget,
-    locate: locateWidget,
-    basemapGallery: basemapWidget,
-    scaleBar: scaleBar,
-    print: printWidget
-  };
+    return { home: homeWidget, locate: locateWidget, scaleBar, print: printWidget, basemapGallery: basemapWidget };
 }
 
 // Create and configure the CoordinateConversion widget
