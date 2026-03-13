@@ -57,89 +57,68 @@
         <!-- Main Content Area -->
         <div id="viewDiv"></div>
 
-        <!-- Panels Container -->
-        <calcite-shell-panel slot="panel-end" position="end" displayMode="float" hidden>
+        <!-- Panels Container - always visible on desktop -->
+        <calcite-shell-panel slot="panel-end" position="end" id="main-panel">
+
+            <!-- Action Bar - the tab strip -->
+            <calcite-action-bar slot="action-bar" id="action-bar">
+                <calcite-action id="action-about" 
+                    text="About" icon="information" 
+                    active></calcite-action>
+                <calcite-action id="action-layers" 
+                    text="Layers" icon="layers"></calcite-action>
+                <calcite-action id="action-legend" 
+                    text="Legend" icon="legend"></calcite-action>
+                <calcite-action id="action-tools" 
+                    text="Tools" icon="tools"></calcite-action>
+                <calcite-action id="action-print" 
+                    text="Print" icon="print"></calcite-action>
+                <calcite-action id="action-bookmarks" 
+                    text="Bookmarks" icon="bookmark"></calcite-action>
+            </calcite-action-bar>
+
             <!-- About Panel -->
-            <calcite-panel 
-                id="about-panel"
-                heading="About"
-                hidden>
+            <calcite-panel id="about-panel" heading="About">
                 <div id="aboutPanelContent"></div>
             </calcite-panel>
 
-            <!-- Tools Panel -->
-            <calcite-panel 
-                id="tools-panel"
-                heading="Tools"
-                hidden>
-                <div id="toolsPanelContent">
-                    <calcite-block heading="Measurement" collapsible>
-                        <calcite-button
-                            id="distance-button"
-                            icon-start="measure-line"
-                            appearance="outline">
-                            Distance
-                        </calcite-button>
-                        <calcite-button
-                            id="area-button"
-                            icon-start="measure-area"
-                            appearance="outline">
-                            Area
-                        </calcite-button>
-                    </calcite-block>
-
-                    <calcite-block heading="Coordinate ID/Conversion" collapsible>
-                        <calcite-button
-                            id="coords-button"
-                            icon-start="pin"
-                            appearance="outline">
-                            Coordinates
-                        </calcite-button>
-                    </calcite-block>
-
-                    <calcite-block heading="Area Identify" collapsible>
-                        <calcite-button
-                            id="boxid-button"
-                            icon-start="box-select"
-                            appearance="outline">
-                            Draw Box
-                        </calcite-button>
-                    </calcite-block>
-
-                    <calcite-notice>
-                        <div slot="message">
-                            When tools are active, the widget appears on the map below. 
-                            Use Clear Tool to deactivate and close the widget.
-                        </div>
-                    </calcite-notice>
-
-                    <calcite-button
-                        id="clear-button"
-                        icon-start="trash"
-                        kind="danger"
-                        appearance="outline"
-                        width="full">
-                        Clear Tool
-                    </calcite-button>
-                </div>
-            </calcite-panel>
-
-            <!-- Other panels would follow similar pattern -->
             <!-- Layers Panel -->
-            <calcite-panel 
-                id="layers-panel"
-                heading="Layers"
-                hidden>
+            <calcite-panel id="layers-panel" heading="Layers" hidden>
                 <div id="layersPanelContent"></div>
             </calcite-panel>
 
             <!-- Legend Panel -->
-            <calcite-panel 
-                id="legend-panel"
-                heading="Legend"
-                hidden>
+            <calcite-panel id="legend-panel" heading="Legend" hidden>
                 <div id="legendPanelContent"></div>
             </calcite-panel>
+
+            <!-- Tools Panel -->
+            <calcite-panel id="tools-panel" heading="Tools" hidden>
+                <div id="toolsPanelContent">
+                    <calcite-block heading="Measurement" collapsible open>
+                        <calcite-button id="distance-button" icon-start="measure-line" appearance="outline" width="full">Distance</calcite-button>
+                        <calcite-button id="area-button" icon-start="measure-area" appearance="outline" width="full">Area</calcite-button>
+                    </calcite-block>
+                    <calcite-block heading="Coordinate ID/Conversion" collapsible>
+                        <calcite-button id="coords-button" icon-start="pin" appearance="outline" width="full">Coordinates</calcite-button>
+                    </calcite-block>
+                    <calcite-block heading="Area Identify" collapsible>
+                        <calcite-button id="boxid-button" icon-start="box-select" appearance="outline" width="full">Draw Box</calcite-button>
+                    </calcite-block>
+                    <calcite-button id="clear-button" icon-start="trash" kind="danger" appearance="outline" width="full">Clear Tool</calcite-button>
+                </div>
+            </calcite-panel>
+
+            <!-- Print Panel -->
+            <calcite-panel id="print-panel" heading="Print" hidden>
+                <div id="printPanelContent"></div>
+            </calcite-panel>
+
+            <!-- Bookmarks Panel -->
+            <calcite-panel id="bookmarks-panel" heading="Bookmarks" hidden>
+                <div id="bookmarksPanelContent"></div>
+            </calcite-panel>
+
         </calcite-shell-panel>
 
         <!-- Loading Indicator -->
